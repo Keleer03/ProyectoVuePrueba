@@ -1,6 +1,6 @@
 // eslint-disable-next-line vue/multi-word-component-names
 <template>
-  <h1>Hola mundo</h1>
+  <h1>Hola Mundo</h1>
   <p>{{ contador }}</p>
 
   <button @click="incrementar">Incrementar valor</button>

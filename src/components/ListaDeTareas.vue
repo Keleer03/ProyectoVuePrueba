@@ -3,8 +3,9 @@
     <h2>Lista de Tareas</h2>
     <input type="text" v-model="nuevaTarea" @keyup.enter="addTarea" />
     <ul>
-      <li v-for="(tarea, index) in tareas">
+      <li v-for="(tarea, index) in tareas" :key="index">
         {{ tarea }}
+        <button @click="deleteTarea(index)">Borrar la tarea</button>
       </li>
     </ul>
   </div>
@@ -14,10 +15,15 @@
 import { ref } from 'vue'
 const tareas = ref([])
 const nuevaTarea = ref('')
+
 const addTarea = () => {
   tareas.value.push(nuevaTarea.value)
   nuevaTarea.value = ''
 }
+
+const deleteTarea = (index) => {
+  tareas.value.splice(index, 1)
+}
 </script>
 
-<style></style>
+<style scoped></style>
