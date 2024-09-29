@@ -1,5 +1,6 @@
 <template>
   <Contador></Contador>
+  <v-btn>Button</v-btn>
   <ListaDeTareas></ListaDeTareas>
   <MainView></MainView>
 </template>
