@@ -22,8 +22,12 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { schema } from '../schemas/validationSchema'
+import { useRegistrarStore } from '@/modules/registro/stores/registrarStore'
 
-const onSubmit = () => {
+const registrarStore = useRegistrarStore()
+
+const onSubmit = (values) => {
+  registrarStore.guardarRegistro(values.nombre, values.email)
   console.log('Se ha enviado el formulario')
 }
 </script>
